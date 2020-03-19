@@ -1,0 +1,1 @@
+VK.Widgets.Auth("vk_auth", {"width":239,"onAuth":"function(data) {alert('user '+data['uid']+' authorized');}"});

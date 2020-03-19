@@ -1,0 +1,86 @@
+{
+  "subscribes": [
+    {
+      "id": 1,
+      "title": "Бесплатная подписка",
+      "description": "Какое-то описание подписки",
+      "image": "img/avatar1-sm.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Pay What You Like",
+      "description": "Какое-то описание подписки",
+      "image": "img/avatar2-sm.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Кастомная подписка за бабло",
+      "description": "Какое-то описание подписки",
+      "cost": 150,
+      "currency": 1,
+      "image": "img/avatar3-sm.jpg"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "some title",
+      "teaser": "some teaser",
+      "body": "<p>some text</p>",
+      "subscription": {
+        "id": 1,
+        "type": "PY",
+        "name": "Платная на 1 год"
+      },
+      "tags": [
+        {
+          "id": 1,
+          "name": "music"
+        },
+        {
+          "id": 2,
+          "name": "cinema"
+        }
+      ],
+      "attachments": [
+        {
+          "id": 1,
+          "name": "some_file.txt",
+          "size": 91136
+        },
+        {
+          "id": 2,
+          "name": "some bid value file.mp4",
+          "size": 1399848960
+        }
+      ],
+      "image": {
+        "url": "img/post-photo4.jpg",
+        "id": 1,
+        "name": "post-photo4.jpg"
+      },
+      "video": {
+        "cover": "img/video-youtube1.jpg",
+        "source": "YOUTUBE.COM",
+        "url": "https://youtube.com/watch?v=excVFQ2TWig",
+        "id": 1,
+        "name": "Iron Maid - ChillGroves",
+        "description": "Lorem ipsum dolor sit amet, consectetur ipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      }
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "Театр"
+    },
+    {
+      "id": 2,
+      "name": "Музыка"
+    },
+    {
+      "id": 2,
+      "name": "Дизайн"
+    }
+  ]
+}

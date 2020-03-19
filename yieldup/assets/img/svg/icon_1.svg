@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <g id="Icon_1" data-name="Icon 1" transform="translate(-422 -967)">
+    <g id="Ellipse_165" data-name="Ellipse 165" transform="translate(422 967)" fill="none" stroke="#132248" stroke-width="2">
+      <circle cx="60" cy="60" r="60" stroke="none"/>
+      <circle cx="60" cy="60" r="59" fill="none"/>
+    </g>
+    <text id="_" data-name="€" transform="translate(456 1053)" fill="#00a79e" font-size="74" font-family="OpenSans-Light, Open Sans" font-weight="300"><tspan x="0" y="0">€</tspan></text>
+  </g>
+</svg>

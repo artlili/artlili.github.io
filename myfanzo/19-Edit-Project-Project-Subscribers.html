@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <title>Редактирование проекта. Подписчки</title>
+
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select_1.13.5.css">
+
+    <!-- Main Styles CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/new-layout.css">
+
+    <!-- Font Styles CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Fontawesome Styles CSS -->
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+
+    <!-- MyltiSelect2 Styles CSS - modified-->
+    <link href="css/select2_4.0.6-rc.0.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- Make a post - shadow effect -->
+<div class="shadow-box"></div>
+<!-- Preloader -->
+<div id="hellopreloader">
+    <div class="preloader">
+        <svg width="45" height="45" stroke="#fff">
+            <g fill="none" fill-rule="evenodd" stroke-width="2" transform="translate(1 1)">
+                <circle cx="22" cy="22" r="6" stroke="none">
+                    <animate attributeName="r" begin="1.5s" calcMode="linear" dur="3s" repeatCount="indefinite"
+                             values="6;22"/>
+                    <animate attributeName="stroke-opacity" begin="1.5s" calcMode="linear" dur="3s"
+                             repeatCount="indefinite" values="1;0"/>
+                    <animate attributeName="stroke-width" begin="1.5s" calcMode="linear" dur="3s"
+                             repeatCount="indefinite" values="2;0"/>
+                </circle>
+                <circle cx="22" cy="22" r="6" stroke="none">
+                    <animate attributeName="r" begin="3s" calcMode="linear" dur="3s" repeatCount="indefinite"
+                             values="6;22"/>
+                    <animate attributeName="stroke-opacity" begin="3s" calcMode="linear" dur="3s"
+                             repeatCount="indefinite" values="1;0"/>
+                    <animate attributeName="stroke-width" begin="3s" calcMode="linear" dur="3s" repeatCount="indefinite"
+                             values="2;0"/>
+                </circle>
+                <circle cx="22" cy="22" r="8">
+                    <animate attributeName="r" begin="0s" calcMode="linear" dur="1.5s" repeatCount="indefinite"
+                             values="6;1;2;3;4;5;6"/>
+                </circle>
+            </g>
+        </svg>
+
+        <div class="text">Загрузка ...</div>
+    </div>
+</div>
+
+<!-- ... end Preloader -->
+
+
+<!-- Fixed Sidebar Left -->
+
+<div class="fixed-sidebar">
+    <div class="fixed-sidebar-left sidebar--small" id="sidebar-left">
+
+        <a href="02-ProfilePage.html" class="logo">
+            <div class="img-wrap">
+                <img src="img/logo_sm.png" alt="Fanzo">
+            </div>
+        </a>
+
+        <div class="mCustomScrollbar" data-mcs-theme="dark" id="ieremtool">
+            <ul class="left-menu">
+                <li class="disabled">
+                    <a href="#" class="js-sidebar-open" data-toggle="tooltip" data-placement="right"
+                       title="Открыть Меню">
+                        <i class="left-menu-icon fas fa-bars fa-2x"></i>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="03-Newsfeed.html" data-toggle="tooltip" data-placement="right" title="Лента Пользователя">
+                        <i class="left-menu-icon fas fa-newspaper fa-2x"></i>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="16-FavPagesFeed.html" data-toggle="tooltip" data-placement="right" title="Мои Проекты">
+                        <i class="left-menu-icon fas fa-star fa-2x"></i>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="17-FriendGroups.html" data-toggle="tooltip" data-placement="right" title="Блог">
+                        <i class="left-menu-icon fas fa-book-open fa-2x"></i>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="18-MusicAndPlaylists.html" data-toggle="tooltip" data-placement="right" title="Помощь">
+                        <i class="left-menu-icon fas fa-question fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
+        <a href="02-ProfilePage.html" class="logo">
+            <div class="img-wrap">
+                <img src="img/logo.png" alt="Fanzo">
+            </div>
+        </a>
+
+        <div class="mCustomScrollbar" data-mcs-theme="dark" id="ieremtool">
+            <ul class="left-menu">
+                <li class="disabled">
+                    <a href="#" class="js-sidebar-open" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Скрыть Меню">
+                        <i class="left-menu-icon fas fa-times fa-2x"></i>
+                        <span class="left-menu-title">Скрыть Меню</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="03-Newsfeed.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Лента Пользователя">
+                        <i class="left-menu-icon fas fa-newspaper fa-2x"></i>
+                        <span class="left-menu-title">Лента Пользователя</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="16-FavPagesFeed.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Мои Проекты">
+                        <i class="left-menu-icon fas fa-star fa-2x"></i>
+                        <span class="left-menu-title">Мои Проекты</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="17-FriendGroups.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Блог">
+                        <i class="left-menu-icon fas fa-book-open fa-2x"></i>
+                        <span class="left-menu-title">Блог</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="18-MusicAndPlaylists.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Помощь">
+                        <i class="left-menu-icon fas fa-question fa-2x"></i>
+                        <span class="left-menu-title">Помощь</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<!-- ... end Fixed Sidebar Left -->
+
+
+<!-- Fixed Sidebar Left -->
+
+<div class="fixed-sidebar fixed-sidebar-responsive">
+
+    <div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
+        <a href="#" class="logo js-sidebar-open purple">
+            <i class="fas fa-bars fa-3x"></i>
+        </a>
+
+    </div>
+
+    <div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
+        <a href="#" class="logo">
+            <div class="img-wrap">
+                <img src="img/logo.png" alt="Fanzo">
+            </div>
+        </a>
+
+        <div class="mCustomScrollbar" data-mcs-theme="dark" id="ieremtool">
+
+            <div class="control-block">
+                <div class="author-page author vcard inline-items">
+                    <div class="author-thumb">
+                        <img alt="author" src="img/author-page.jpg" class="avatar">
+                    </div>
+                    <a href="02-ProfilePage.html" class="author-name fn">
+                        <div class="author-title">
+                            James Spiegel
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="ui-block-title ui-block-title-small">
+                <h6 class="title">ОСНОВНЫЕ РАЗДЕЛЫ</h6>
+            </div>
+
+            <ul class="left-menu">
+                <li class="disabled">
+                    <a href="#" class="js-sidebar-open">
+                        <i class="left-menu-icon fas fa-times fa-2x"></i>
+                        <span class="left-menu-title">Скрыть Меню</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="mobile-index.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Лента Пользователя">
+                        <i class="left-menu-icon fas fa-newspaper fa-2x"></i>
+                        <span class="left-menu-title">Лента Пользователя</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="Mobile-28-YourAccount-PersonalInformation.html" data-toggle="tooltip"
+                       data-placement="right" data-original-title="Мои Проекты">
+                        <i class="left-menu-icon fas fa-star fa-2x"></i>
+                        <span class="left-menu-title">Мои Проекты</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="mobile-29-YourAccount-AccountSettings.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Блог">
+                        <i class="left-menu-icon fas fa-book-open fa-2x"></i>
+                        <span class="left-menu-title">Блог</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="Mobile-30-YourAccount-ChangePassword.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Помощь">
+                        <i class="left-menu-icon fas fa-question fa-2x"></i>
+                        <span class="left-menu-title">Помощь</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="ui-block-title ui-block-title-small">
+                <h6 class="title">ВАШ ПРОФИЛЬ</h6>
+            </div>
+
+            <ul class="account-settings">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>Настройки Профиля</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-star"></i>
+                        <span>Создать Проект</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Выйти</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<!-- ... end Fixed Sidebar Left -->
+
+<!-- Profile Settings Responsive -->
+<div class="profile-settings-responsive">
+
+    <a href="#" class="js-profile-settings-open profile-settings-open">
+        <svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-prefix="fa" data-icon="angle-right"
+             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="">
+            <path fill="currentColor"
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
+        </svg><!-- <i class="fa fa-angle-right" aria-hidden="true"></i> -->
+        <svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-prefix="fa" data-icon="angle-left"
+             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="">
+            <path fill="currentColor"
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path>
+        </svg><!-- <i class="fa fa-angle-left" aria-hidden="true"></i> -->
+    </a>
+    <div class="mCustomScrollbar ps ps--theme_default ps--active-y" data-mcs-theme="dark"
+         data-ps-id="e68b92af-1dcf-d505-4e92-5c661a0b1405">
+        <div class="ui-block">
+            <div class="your-profile">
+                <div id="accordion1" role="tablist" aria-multiselectable="true">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne-1">
+                            <h6 class="mb-0">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne-1"
+                                   aria-expanded="true" aria-controls="collapseOne">
+                                    Настройки проекта
+                                    <i class="fas fa-caret-down"></i>
+                                </a>
+                            </h6>
+                        </div>
+
+                        <div id="collapseOne-1" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                            <ul class="your-profile-menu">
+                                <li>
+                                    <a href="28-YourAccount-PersonalInformation.html">Описание проекта</a>
+                                </li>
+                                <li>
+                                    <a href="29-YourAccount-AccountSettings.html">Настройки проекта</a>
+                                </li>
+                                <li>
+                                    <a href="30-YourAccount-ChangePassword.html">Настройки подписок</a>
+                                </li>
+                                <li>
+                                    <a href="31-YourAccount-HobbiesAndInterests.html">Настройки уведомлений</a>
+                                </li>
+                                <li>
+                                    <a href="31-YourAccount-HobbiesAndInterests.html">Соавторы</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ui-block-title">
+                    <a href="33-YourAccount-Notifications.html" class="h6 title">Подписчики</a>
+                </div>
+
+                <div class="ui-block-title">
+                    <a href="33-YourAccount-Notifications.html" class="h6 title">Сообщения</a>
+                </div>
+                <div class="ui-block-title">
+                    <a href="34-YourAccount-ChatMessages.html" class="h6 title">Жалобы</a>
+                </div>
+                <div class="ui-block-title">
+                    <a href="36-FavPage-SettingsAndCreatePopup.html" class="h6 title">Статистика</a>
+                </div>
+                <div class="ui-block-title">
+                    <a href="36-FavPage-SettingsAndCreatePopup.html" class="h6 title">Финансы</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ... end Profile Settings Responsive -->
+
+<!-- Header-BP -->
+
+<header class="header" id="site-header">
+
+    <div class="page-title">
+        <h6>Редактировать проект</h6>
+    </div>
+
+    <div class="header-content-wrapper">
+
+        <div class="search-cont">
+            <fieldset class="form-group field">
+                <select class="selectpicker form-control">
+                    <option value="Пользователь" selected data-icon="far fa-user">Пользователь</option>
+                    <option value="Проект" data-icon="fas fa-star">Проект</option>
+                    <option value="Тег" data-icon="fas fa-tags">Тег</option>
+                    <option value="Блог" data-icon="far fa-file-alt">Блог</option>
+                </select>
+            </fieldset>
+
+            <div class="cart">
+                <div class="wrap">
+                    <form>
+                        <input class="search-input" placeholder="Найти по тегу, имени или названию" type="search"
+                               name="q" id="search" autocomplete="off" data-toggle="collapse" href="#collapseExample"
+                               aria-expanded="false" aria-controls="collapseExample">
+                        <input class="search-submit" type="submit" value="">
+                        <i class="icon-searchme fas fa-search"></i>
+                    </form>
+
+                </div>
+
+                <div class="collapse col-search" id="collapseExample">
+                    <div class="card card-body">
+
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar21-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Marie Davidson</span>
+                                <span class="chat-message-item">4 Friends in Common</span>
+                            </div>
+                            <span class="notification-icon">
+					    		<i class="far fa-user"></i>
+					    	</span>
+                        </div>
+
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar27-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Marina Polson</span>
+                                <span class="chat-message-item">Mutual Friend: Mathilda Brinker</span>
+                            </div>
+                            <span class="notification-icon">
+				    			<i class="far fa-user"></i>
+				    		</span>
+                        </div>
+
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar36-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Ann Marie Gibson</span>
+                                <span class="chat-message-item">New York, NY</span>
+                            </div>
+                            <span class="notification-icon">
+		    					<i class="far fa-user"></i>
+		    				</span>
+                        </div>
+
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar22-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Dave Marinara</span>
+                                <span class="chat-message-item">8 Friends in Common</span>
+                            </div>
+                            <span class="notification-icon">
+				    			<i class="far fa-user"></i>
+				    		</span>
+                        </div>
+
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar47-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">The Marina Bar</span>
+                                <span class="chat-message-item">Restaurant / Bar</span>
+                            </div>
+                            <span class="notification-icon">
+					    		<i class="far fa-user"></i>
+					    	</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-block">
+
+            <div class="author-page author vcard inline-items more">
+                <div class="author-thumb">
+                    <img alt="author" src="img/author-page.jpg" class="avatar">
+                    <div class="more-dropdown more-with-triangle">
+                        <div class="mCustomScrollbar" data-mcs-theme="dark">
+                            <div class="ui-block-title ui-block-title-small">
+                                <h6 class="title">Ваш Профиль</h6>
+                            </div>
+
+                            <ul class="account-settings">
+                                <li>
+                                    <a href="29-YourAccount-AccountSettings.html">
+                                        <i class="fas fa-sliders-h fa-2x"></i>
+                                        <span>Настройки Профиля</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-star far fa-2x"></i>
+                                        <span>Создать Проект</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-sign-out-alt fa-2x"></i>
+                                        <span>Выйти</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <a href="02-ProfilePage.html" class="author-name fn">
+                    <div class="author-title">
+                        James Spiegel <i class="fas fa-caret-down"></i>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</header>
+
+<!-- ... end Header-BP -->
+
+
+<!-- Responsive Header-BP -->
+
+<header class="header header-responsive" id="site-header-responsive">
+
+    <div class="header-content-wrapper">
+
+        <!-- Search -->
+        <div class="search-cont">
+            <fieldset class="form-group field">
+                <select class="selectpicker form-control">
+                    <option value="Пользователь" selected data-icon="far fa-user">Пользователь</option>
+                    <option value="Проект" data-icon="fas fa-star">Проект</option>
+                    <option value="Тег" data-icon="fas fa-tags">Тег</option>
+                    <option value="Блог" data-icon="far fa-file-alt">Блог</option>
+                </select>
+            </fieldset>
+
+            <div class="cart">
+                <div class="wrap">
+                    <form>
+                        <input class="search-input" placeholder="Найти..." type="search" name="q" id="search"
+                               autocomplete="off" data-toggle="collapse" href="#collapseSearchMobile"
+                               aria-expanded="false" aria-controls="collapseSearchMobile">
+                        <input class="search-submit" type="submit" value="">
+                        <i class="icon-searchme fas fa-search"></i>
+                    </form>
+
+                </div>
+
+                <div class="collapse col-search" id="collapseSearchMobile">
+                    <div class="card card-body">
+
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar21-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Marie Davidson</span>
+                                <span class="chat-message-item">4 Friends in Common</span>
+                            </div>
+                            <span class="notification-icon">
+					    		<i class="far fa-user"></i>
+					    	</span>
+                        </div>
+
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar27-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Marina Polson</span>
+                                <span class="chat-message-item">Mutual Friend: Mathilda Brinker</span>
+                            </div>
+                            <span class="notification-icon">
+				    			<i class="far fa-user"></i>
+				    		</span>
+                        </div>
+
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar36-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Ann Marie Gibson</span>
+                                <span class="chat-message-item">New York, NY</span>
+                            </div>
+                            <span class="notification-icon">
+		    					<i class="far fa-user"></i>
+		    				</span>
+                        </div>
+
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar22-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Dave Marinara</span>
+                                <span class="chat-message-item">8 Friends in Common</span>
+                            </div>
+                            <span class="notification-icon">
+				    			<i class="far fa-user"></i>
+				    		</span>
+                        </div>
+
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar47-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">The Marina Bar</span>
+                                <span class="chat-message-item">Restaurant / Bar</span>
+                            </div>
+                            <span class="notification-icon">
+					    		<i class="far fa-user"></i>
+					    	</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.Search -->
+
+    </div>
+
+</header>
+<!-- ... end Responsive Header-BP -->
+
+<div class="header-spacer"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="ui-block">
+                <header class="page-header" style="background-image:url(img/top-header2.jpg);">
+                    <div class="page-header__block">
+                        <div class="page-header__avatar">
+                            <img src="img/author-main2.jpg" alt="author">
+                        </div>
+                        <div class="page-header__info">
+                            <a href="#" class="h3">Green Goo Rock</a>
+                            <p class="m0">Здесь размещается тизер проекта</p>
+                            <div class="banned-flag more">
+                                <span class="banned-flag__control">
+                                    Бан
+                                </span>
+                                <div class="banned-flag__dropdown more-dropdown">
+                                    <div class="banned-flag__content">
+                                        <p class="m-0 px-2 py-1">
+                                            Какой-то текст про бан пользователя <a href="#">со ссылкой</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <!-- Main Content -->
+
+        <main class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+
+            <div id="newsfeed-items-grid">
+                <div class="ui-block">
+                    <div class="ui-block-title">
+                        <h6>Подписчики проекта</h6>
+                    </div>
+                    <div class="ui-block-content">
+                        <div class="row">
+                            <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="ui-block-title">
+                                        <h6 class="title">
+                                            Текущие подписчики
+                                            &nbsp;
+                                            <i class="fa fa-download gray"></i>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-block-content">
+                        <div class="row">
+                            <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="ui-block-title">
+                                        <h6 class="title">
+                                            Бывшие подписчики
+                                            &nbsp;
+                                            <i class="fa fa-download gray"></i>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут название подпски
+                                            </p>
+                                            <p class="m-0 small">
+                                                Тут причина отписки
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-block-content">
+                        <div class="row">
+                            <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="ui-block-title">
+                                        <h6 class="title">
+                                            Пользователи с донатом
+                                            &nbsp;
+                                            <i class="fa fa-download gray"></i>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="ui-block">
+                                    <div class="birthday-item d-flex align-top">
+                                        <div class="author-thumb">
+                                            <img src="img/avatar7-sm.jpg" alt="author">
+                                        </div>
+                                        <div class="birthday-author-name">
+                                            <p class="mb-1">
+                                                <a href="#" class="h6 author-name">Marina Valentine </a>
+                                                <br />
+                                                <a href="#" >some-name@some-domain.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <aside class="col col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12  responsive-display-none">
+            <div class="ui-block">
+                <div class="your-profile">
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="mb-0 cp" data-toggle="slide">
+                                    Настройки проекта
+                                    <i class="fas fa-caret-down rotator"></i>
+                                </h6>
+                            </div>
+
+                            <div id="profile-settings">
+                                <ul class="your-profile-menu">
+                                    <li>
+                                        <a href="09-Edit-Project.html">Описание проекта</a>
+                                    </li>
+                                    <li>
+                                        <a href="18-Edit-Project-Project-Settings.html">Настройки проекта</a>
+                                    </li>
+                                    <li>
+                                        <a href="17-Edit-Project-Setup-Subscribes.html">Настройки подписок</a>
+                                    </li>
+                                    <li>
+                                        <a href="31-YourAccount-HobbiesAndInterests.html">Настройки уведомлений</a>
+                                    </li>
+                                    <li>
+                                        <a href="31-YourAccount-HobbiesAndInterests.html">Соавторы</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-block-title">
+                        <a href="19-Edit-Project-Project-Subscribers.html" class="h6 title">Подписчики</a>
+                    </div>
+                    <div class="ui-block-title">
+                        <a href="34-YourAccount-ChatMessages.html" class="h6 title">Сообщения</a>
+                    </div>
+                    <div class="ui-block-title">
+                        <a href="35-YourAccount-FriendsRequests.html" class="h6 title">Жалобы</a>
+                    </div>
+                    <div class="ui-block-title">
+                        <a href="36-FavPage-SettingsAndCreatePopup.html" class="h6 title">Статистика</a>
+                    </div>
+                    <div class="ui-block-title">
+                        <a href="36-FavPage-SettingsAndCreatePopup.html" class="h6 title">Финансы</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+
+<!-- Window-popup Update Header Photo -->
+
+<div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo"
+     aria-hidden="true">
+    <div class="modal-dialog window-popup update-header-photo" role="document">
+        <div class="modal-content">
+            <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+                <i class="fas fa-times fa-2x"></i>
+            </a>
+
+            <div class="modal-header">
+                <h6 class="title">Update Header Photo</h6>
+            </div>
+
+            <div class="modal-body">
+                <a href="#" class="upload-photo-item">
+                    <h6>Upload Photo</h6>
+                    <span>Browse your computer.</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ... end Window-popup Update Header Photo -->
+
+<!-- Window-popup Choose from my Photo -->
+
+<div class="modal fade" id="choose-from-my-photo" tabindex="-1" role="dialog" aria-labelledby="choose-from-my-photo"
+     aria-hidden="true">
+    <div class="modal-dialog window-popup choose-from-my-photo" role="document">
+
+        <div class="modal-content">
+            <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+                <i class="fas fa-times fa-2x"></i>
+            </a>
+            <div class="modal-header">
+                <h6 class="title">Choose from My Photos</h6>
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-expanded="true">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-expanded="false">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="modal-body">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home" role="tabpanel" aria-expanded="true">
+
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo1.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo2.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo3.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo4.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo5.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo6.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo7.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo8.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo9.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <a href="#" class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
+                        <a href="#" class="btn btn-primary btn-lg btn--half-width">Confirm Photo</a>
+
+                    </div>
+                    <div class="tab-pane" id="profile" role="tabpanel" aria-expanded="false">
+
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo10.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">South America Vacations</a>
+                                    <span>Last Added: 2 hours ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo11.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">Photoshoot Summer 2016</a>
+                                    <span>Last Added: 5 weeks ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo12.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">Amazing Street Food</a>
+                                    <span>Last Added: 6 mins ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo13.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">Graffity & Street Art</a>
+                                    <span>Last Added: 16 hours ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo14.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">Amazing Landscapes</a>
+                                    <span>Last Added: 13 mins ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo15.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">The Majestic Canyon</a>
+                                    <span>Last Added: 57 mins ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <a href="#" class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
+                        <a href="#" class="btn btn-primary btn-lg disabled btn--half-width">Confirm Photo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ... end Window-popup Choose from my Photo -->
+
+<a class="back-to-top" href="">
+    <i class="back-icon fas fa-long-arrow-alt-up"></i>
+</a>
+
+<!-- autor-menu -->
+<div id="autor-menu">
+    <div class="col-xs-12 col-md-8 col-lg-9 autor-menu-row">
+        <div class="autor-menu-row">
+            <div class="author-menu-thumb">
+                <img src="img/author-main2.jpg" alt="author">
+            </div>
+            <div class="autor-menu-content">
+                <a href="#">Green Goo Rock</a>
+                <span>Здесь размещается тизер проекта</span>
+                <ul>
+                    <li>
+                        <a href="13-FavouritePage-About.html">О Проекте</a>
+                    </li>
+                    <li>
+                        <a href="12-FavouritePage.html" class="active">Посты</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="autor-menu-ul" id="subscriptions-link">
+                <a class="btn-fanzo-yellow scroll-btn">Подписаться</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ./autor-menu -->
+
+<!-- Jquery Scripts -->
+<script src="js/jquery-3.2.1.js"></script>
+
+<!-- Check flags -->
+<script src="js/material.min.js"></script>
+
+<!-- Bootstrap Scripts -->
+<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script><!-- search drop menu -->
+<script src="js/bootstrap-select.js"></script><!-- modified -->
+<script src="js/bootstrap-select_1.13.5.js"></script><!-- modified -->
+
+<!-- Calendar -->
+<script src="js/moment.js"></script>
+<script src="js/daterangepicker.js"></script>
+
+<!-- Video popup -->
+<script src="js/jquery.magnific-popup.js"></script>
+
+<!-- Search drop menu -->
+<script src="js/selectize.js"></script>
+
+<!-- Search drop menu-content .js-user-search -->
+<script src="js/base-init.js"></script>
+
+<!-- Fontawesome JS Scripts -->
+<script defer src="fontawesome/js/all.js"></script>
+
+<!-- MyltiSelect2 JS Scripts -->
+<script defer src="js/select2_4.0.6-rc.0.js"></script>
+
+<!-- Yandex share Scripts -->
+<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="//yastatic.net/share2/share.js"></script>
+
+<!-- Search Scripts -->
+<script type="text/javascript" src="js/search-query.min.js"></script>
+<script type="text/javascript" src="js/search-slide.min.js"></script>
+
+<!-- IE remove tooltips -->
+<script src="js/ei-remove-tooltip.js"></script>
+
+<!-- Main Scripts -->
+<script src="js/main.js"></script>
+
+<!-- Facebook Scripts -->
+<div id="fb-root"></div>
+<script src="js/facebook.js"></script>
+
+</body>
+</html>

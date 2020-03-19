@@ -1,0 +1,2005 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Создание поста, с превью</title>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select_1.13.5.css">
+    <!-- Main Styles CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/new-layout.css">
+    <!-- Font Styles CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Fontawesome Styles CSS -->
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+    <!-- MyltiSelect2 Styles CSS - modified-->
+    <link href="css/select2_4.0.6-rc.0.css" rel="stylesheet">
+</head>
+<body>
+<!-- Make a post - shadow effect -->
+<div class="shadow-box"></div>
+<!-- Preloader -->
+<div id="hellopreloader">
+    <div class="preloader">
+        <svg width="45" height="45" stroke="#fff">
+            <g fill="none" fill-rule="evenodd" stroke-width="2" transform="translate(1 1)">
+                <circle cx="22" cy="22" r="6" stroke="none">
+                    <animate attributeName="r" begin="1.5s" calcMode="linear" dur="3s" repeatCount="indefinite"
+                             values="6;22"/>
+                    <animate attributeName="stroke-opacity" begin="1.5s" calcMode="linear" dur="3s"
+                             repeatCount="indefinite" values="1;0"/>
+                    <animate attributeName="stroke-width" begin="1.5s" calcMode="linear" dur="3s"
+                             repeatCount="indefinite" values="2;0"/>
+                </circle>
+                <circle cx="22" cy="22" r="6" stroke="none">
+                    <animate attributeName="r" begin="3s" calcMode="linear" dur="3s" repeatCount="indefinite"
+                             values="6;22"/>
+                    <animate attributeName="stroke-opacity" begin="3s" calcMode="linear" dur="3s"
+                             repeatCount="indefinite" values="1;0"/>
+                    <animate attributeName="stroke-width" begin="3s" calcMode="linear" dur="3s" repeatCount="indefinite"
+                             values="2;0"/>
+                </circle>
+                <circle cx="22" cy="22" r="8">
+                    <animate attributeName="r" begin="0s" calcMode="linear" dur="1.5s" repeatCount="indefinite"
+                             values="6;1;2;3;4;5;6"/>
+                </circle>
+            </g>
+        </svg>
+        <div class="text">Загрузка ...</div>
+    </div>
+</div>
+<!-- ... end Preloader -->
+<!-- Fixed Sidebar Left -->
+<div class="fixed-sidebar">
+    <div class="fixed-sidebar-left sidebar--small" id="sidebar-left">
+        <a href="02-ProfilePage.html" class="logo">
+            <div class="img-wrap">
+                <img src="img/logo_sm.png" alt="Fanzo">
+            </div>
+        </a>
+        <div class="mCustomScrollbar" data-mcs-theme="dark" id="ieremtool">
+            <ul class="left-menu">
+                <li class="disabled">
+                    <a href="#" class="js-sidebar-open" data-toggle="tooltip" data-placement="right"
+                       title="Открыть Меню">
+                        <i class="left-menu-icon fas fa-bars fa-2x"></i>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="03-Newsfeed.html" data-toggle="tooltip" data-placement="right" title="Лента Пользователя">
+                        <i class="left-menu-icon fas fa-newspaper fa-2x"></i>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="16-FavPagesFeed.html" data-toggle="tooltip" data-placement="right" title="Мои Проекты">
+                        <i class="left-menu-icon fas fa-star fa-2x"></i>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="17-FriendGroups.html" data-toggle="tooltip" data-placement="right" title="Блог">
+                        <i class="left-menu-icon fas fa-book-open fa-2x"></i>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="18-MusicAndPlaylists.html" data-toggle="tooltip" data-placement="right" title="Помощь">
+                        <i class="left-menu-icon fas fa-question fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
+        <a href="02-ProfilePage.html" class="logo">
+            <div class="img-wrap">
+                <img src="img/logo.png" alt="Fanzo">
+            </div>
+        </a>
+        <div class="mCustomScrollbar" data-mcs-theme="dark" id="ieremtool">
+            <ul class="left-menu">
+                <li class="disabled">
+                    <a href="#" class="js-sidebar-open" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Скрыть Меню">
+                        <i class="left-menu-icon fas fa-times fa-2x"></i>
+                        <span class="left-menu-title">Скрыть Меню</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="03-Newsfeed.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Лента Пользователя">
+                        <i class="left-menu-icon fas fa-newspaper fa-2x"></i>
+                        <span class="left-menu-title">Лента Пользователя</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="16-FavPagesFeed.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Мои Проекты">
+                        <i class="left-menu-icon fas fa-star fa-2x"></i>
+                        <span class="left-menu-title">Мои Проекты</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="17-FriendGroups.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Блог">
+                        <i class="left-menu-icon fas fa-book-open fa-2x"></i>
+                        <span class="left-menu-title">Блог</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="18-MusicAndPlaylists.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Помощь">
+                        <i class="left-menu-icon fas fa-question fa-2x"></i>
+                        <span class="left-menu-title">Помощь</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- ... end Fixed Sidebar Left -->
+<!-- Fixed Sidebar Left -->
+<div class="fixed-sidebar fixed-sidebar-responsive">
+    <div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
+        <a href="#" class="logo js-sidebar-open purple">
+            <i class="fas fa-bars fa-3x"></i>
+        </a>
+    </div>
+    <div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
+        <a href="#" class="logo">
+            <div class="img-wrap">
+                <img src="img/logo.png" alt="Fanzo">
+            </div>
+        </a>
+        <div class="mCustomScrollbar" data-mcs-theme="dark" id="ieremtool">
+            <div class="control-block">
+                <div class="author-page author vcard inline-items">
+                    <div class="author-thumb">
+                        <img alt="author" src="img/author-page.jpg" class="avatar">
+                    </div>
+                    <a href="02-ProfilePage.html" class="author-name fn">
+                        <div class="author-title">
+                            James Spiegel
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="ui-block-title ui-block-title-small">
+                <h6 class="title">ОСНОВНЫЕ РАЗДЕЛЫ</h6>
+            </div>
+            <ul class="left-menu">
+                <li class="disabled">
+                    <a href="#" class="js-sidebar-open">
+                        <i class="left-menu-icon fas fa-times fa-2x"></i>
+                        <span class="left-menu-title">Скрыть Меню</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="mobile-index.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Лента Пользователя">
+                        <i class="left-menu-icon fas fa-newspaper fa-2x"></i>
+                        <span class="left-menu-title">Лента Пользователя</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="Mobile-28-YourAccount-PersonalInformation.html" data-toggle="tooltip"
+                       data-placement="right" data-original-title="Мои Проекты">
+                        <i class="left-menu-icon fas fa-star fa-2x"></i>
+                        <span class="left-menu-title">Мои Проекты</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="mobile-29-YourAccount-AccountSettings.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Блог">
+                        <i class="left-menu-icon fas fa-book-open fa-2x"></i>
+                        <span class="left-menu-title">Блог</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="Mobile-30-YourAccount-ChangePassword.html" data-toggle="tooltip" data-placement="right"
+                       data-original-title="Помощь">
+                        <i class="left-menu-icon fas fa-question fa-2x"></i>
+                        <span class="left-menu-title">Помощь</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="ui-block-title ui-block-title-small">
+                <h6 class="title">ВАШ ПРОФИЛЬ</h6>
+            </div>
+            <ul class="account-settings">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>Настройки Профиля</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-star"></i>
+                        <span>Создать Проект</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Выйти</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- ... end Fixed Sidebar Left -->
+<!-- Header-BP -->
+<header class="header" id="site-header">
+    <div class="page-title">
+        <h6>Создание поста, с превью</h6>
+    </div>
+    <div class="header-content-wrapper">
+        <div class="search-cont">
+            <fieldset class="form-group field">
+                <select class="selectpicker form-control">
+                    <option value="Пользователь" selected data-icon="far fa-user">Пользователь</option>
+                    <option value="Проект" data-icon="fas fa-star">Проект</option>
+                    <option value="Тег" data-icon="fas fa-tags">Тег</option>
+                    <option value="Блог" data-icon="far fa-file-alt">Блог</option>
+                </select>
+            </fieldset>
+            <div class="cart">
+                <div class="wrap">
+                    <form>
+                        <input class="search-input" placeholder="Найти по тегу, имени или названию" type="search"
+                               name="q" id="search" autocomplete="off" data-toggle="collapse" href="#collapseExample"
+                               aria-expanded="false" aria-controls="collapseExample">
+                        <input class="search-submit" type="submit" value="">
+                        <i class="icon-searchme fas fa-search"></i>
+                    </form>
+                </div>
+                <div class="collapse col-search" id="collapseExample">
+                    <div class="card card-body">
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar21-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Marie Davidson</span>
+                                <span class="chat-message-item">4 Friends in Common</span>
+                            </div>
+                            <span class="notification-icon">
+                                <i class="far fa-user"></i>
+                            </span>
+                        </div>
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar27-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Marina Polson</span>
+                                <span class="chat-message-item">Mutual Friend: Mathilda Brinker</span>
+                            </div>
+                            <span class="notification-icon">
+                                <i class="far fa-user"></i>
+                            </span>
+                        </div>
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar36-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Ann Marie Gibson</span>
+                                <span class="chat-message-item">New York, NY</span>
+                            </div>
+                            <span class="notification-icon">
+                                <i class="far fa-user"></i>
+                            </span>
+                        </div>
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar22-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Dave Marinara</span>
+                                <span class="chat-message-item">8 Friends in Common</span>
+                            </div>
+                            <span class="notification-icon">
+                                <i class="far fa-user"></i>
+                            </span>
+                        </div>
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar47-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">The Marina Bar</span>
+                                <span class="chat-message-item">Restaurant / Bar</span>
+                            </div>
+                            <span class="notification-icon">
+                                <i class="far fa-user"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="control-block">
+            <div class="author-page author vcard inline-items more">
+                <div class="author-thumb">
+                    <img alt="author" src="img/author-page.jpg" class="avatar">
+                    <div class="more-dropdown more-with-triangle">
+                        <div class="mCustomScrollbar" data-mcs-theme="dark">
+                            <div class="ui-block-title ui-block-title-small">
+                                <h6 class="title">Ваш Профиль</h6>
+                            </div>
+                            <ul class="account-settings">
+                                <li>
+                                    <a href="29-YourAccount-AccountSettings.html">
+                                        <i class="fas fa-sliders-h fa-2x"></i>
+                                        <span>Настройки Профиля</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-star far fa-2x"></i>
+                                        <span>Создать Проект</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-sign-out-alt fa-2x"></i>
+                                        <span>Выйти</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <a href="02-ProfilePage.html" class="author-name fn">
+                    <div class="author-title">
+                        James Spiegel <i class="fas fa-caret-down"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ... end Header-BP -->
+<!-- Responsive Header-BP -->
+<header class="header header-responsive" id="site-header-responsive">
+    <div class="header-content-wrapper">
+        <!-- Search -->
+        <div class="search-cont">
+            <fieldset class="form-group field">
+                <select class="selectpicker form-control">
+                    <option value="Пользователь" selected data-icon="far fa-user">Пользователь</option>
+                    <option value="Проект" data-icon="fas fa-star">Проект</option>
+                    <option value="Тег" data-icon="fas fa-tags">Тег</option>
+                    <option value="Блог" data-icon="far fa-file-alt">Блог</option>
+                </select>
+            </fieldset>
+            <div class="cart">
+                <div class="wrap">
+                    <form>
+                        <input class="search-input" placeholder="Найти..." type="search" name="q" id="search"
+                               autocomplete="off" data-toggle="collapse" href="#collapseSearchMobile"
+                               aria-expanded="false" aria-controls="collapseSearchMobile">
+                        <input class="search-submit" type="submit" value="">
+                        <i class="icon-searchme fas fa-search"></i>
+                    </form>
+                </div>
+                <div class="collapse col-search" id="collapseSearchMobile">
+                    <div class="card card-body">
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar21-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Marie Davidson</span>
+                                <span class="chat-message-item">4 Friends in Common</span>
+                            </div>
+                            <span class="notification-icon">
+                                <i class="far fa-user"></i>
+                            </span>
+                        </div>
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar27-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Marina Polson</span>
+                                <span class="chat-message-item">Mutual Friend: Mathilda Brinker</span>
+                            </div>
+                            <span class="notification-icon">
+                                <i class="far fa-user"></i>
+                            </span>
+                        </div>
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar36-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Ann Marie Gibson</span>
+                                <span class="chat-message-item">New York, NY</span>
+                            </div>
+                            <span class="notification-icon">
+                                <i class="far fa-user"></i>
+                            </span>
+                        </div>
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar22-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">Dave Marinara</span>
+                                <span class="chat-message-item">8 Friends in Common</span>
+                            </div>
+                            <span class="notification-icon">
+                                <i class="far fa-user"></i>
+                            </span>
+                        </div>
+                        <div class="collapse-items">
+                            <div class="author-thumb">
+                                <img src="img/avatar47-sm.jpg" alt="avatar">
+                            </div>
+                            <div class="notification-event">
+                                <span class="h6 notification-friend">The Marina Bar</span>
+                                <span class="chat-message-item">Restaurant / Bar</span>
+                            </div>
+                            <span class="notification-icon">
+                                <i class="far fa-user"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.Search -->
+    </div>
+</header>
+<!-- ... end Responsive Header-BP -->
+<div class="header-spacer"></div>
+<div class="container">
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="ui-block">
+                <header class="page-header" style="background-image:url(img/top-header2.jpg);">
+                    <div class="page-header__block">
+                        <div class="page-header__avatar">
+                            <img src="img/author-main2.jpg" alt="author">
+                        </div>
+                        <div class="page-header__info">
+                            <a href="#" class="h3">Green Goo Rock</a>
+                            <p class="m0">Здесь размещается тизер проекта</p>
+                            <div class="banned-flag more">
+                                <span class="banned-flag__control">
+                                    Бан
+                                </span>
+                                <div class="banned-flag__dropdown more-dropdown">
+                                    <div class="banned-flag__content">
+                                        <p class="m-0 px-2 py-1">
+                                            Какой-то текст про бан пользователя <a href="#">со ссылкой</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="page-header__bottom-line">
+                    <nav class="page-navigation">
+                        <a href="13-FavouritePage-About.html" class="active">О Проекте</a>
+                        <a href="12-FavouritePage.html">Посты</a>
+                        <a class="btn-fanzo-yellow scroll-btn" id="subscriptions-link">Подписаться</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <!-- Main Content -->
+        <main class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12">
+            <div id="newsfeed-items-grid">
+                <div class="ui-block shadow-inn">
+                    <div class="ui-block-title title-display" style="display: none;">
+                        <h6 class="title">Создать пост</h6>
+                        <a class="i-display" data-toggle="i-close" style="display: none;">
+                            <i class="fas fa-times fa-lg"></i>
+                        </a>
+                    </div>
+                    <div class="ui-block-content">
+                        <form action="/">
+                            <div id="make-post" style="display: none;">
+                                <div class="row">
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Заголовок</label>
+                                            <input class="form-control" placeholder="" type="text" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Тизер</label>
+                                            <input class="form-control" placeholder="" type="text" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group label-floating is-select">
+                                            <label class="control-label">Тип подписки</label>
+                                            <fieldset class="fieldsetblog fieldstyle">
+                                                <select class="selectblog form-control">
+                                                    <option value="DA" selected>бесплатная</option>
+                                                    <option value="NU">платная на 1 мес</option>
+                                                    <option value="NU">платная на 1 год</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Тест поста</label>
+                                            <textarea class="form-control" placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group label-floating is-select">
+                                            <label class="control-label">Теги поста</label>
+                                            <input class="form-control" placeholder="" type="text" value="">
+                                            <select class="js-example-basic-multiple form-control" name="states[]"
+                                                    multiple="multiple" style="width: 100%">
+                                                <option value="AL">музыка</option>
+                                                <option value="WY">рок</option>
+                                                <option value="WY">ретро</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Фото</label>
+                                            <input class="form-control" placeholder="" type="text" value=""
+                                                   data-toggle="modal" data-target="#update-header-photo">
+                                            <span class="input-group-addon">
+                                                <a href="#" class="options-message foto" data-toggle="modal" data-target="#update-header-photo">
+                                                    <i class="fas fa-camera"></i>
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <div class="caption-inner">
+                                            <img src="img/post-photo8.jpg" alt="photo">
+                                            <div class="caption-close">
+                                                <span class="caption-close-ico">
+                                                    <a href="#" data-toggle="tooltip" title="Удалить">
+                                                        <i class="fas fa-times fa-lg black"></i>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Видео -->
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="parser-container">
+                                          <div class="form-group label-floating">
+                                              <label class="control-label">Видео</label>
+                                              <input class="form-control parser-input" placeholder="" type="text" value=""
+                                                  data-parser="/ajax/parser.php" name="video">
+                                          </div>
+                                          <div id="result"></div>
+                                          <div class="caption-inner parser-inner">
+                                              <div class="video-player">
+                                                  <img src="img/video9.jpg" alt="photo" class="m0">
+                                                  <a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video"
+                                                     id="oi">
+                                                      <i class="play-icon fas fa-play fa-2x"></i>
+                                                  </a>
+                                                  <div class="video-content">
+                                                      <div class="h4 title">Rock Garden Festival - Day 3</div>
+                                                      <time class="published" datetime="2017-03-24T18:18">12:06</time>
+                                                  </div>
+                                              </div>
+                                              <div class="caption-close">
+                                                  <span class="caption-close-ico">
+                                                      <a href="#" data-toggle="tooltip" title="Удалить">
+                                                          <i class="fas fa-times fa-lg black"></i>
+                                                      </a>
+                                                  </span>
+                                              </div>
+                                          </div>
+                                        </div>
+                                    </div><!-- end Видео -->
+                                    <!-- Аудио -->
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="parser-container">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Аудио</label>
+                                                <input class="form-control parser-input" placeholder="" type="text" value=""
+                                                    data-parser="/ajax/parser.php" name="audio">
+                                            </div>
+                                            <div class="caption-inner parser-inner">
+                                            <div class="video-player">
+                                                <img src="img/video9.jpg" alt="photo" class="m0">
+                                                <a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video"
+                                                   id="oi">
+                                                    <i class="play-icon fas fa-play fa-2x"></i>
+                                                </a>
+                                                <div class="video-content">
+                                                    <div class="h4 title">Rock Garden Festival - Day 3</div>
+                                                    <time class="published" datetime="2017-03-24T18:18">12:06</time>
+                                                </div>
+                                            </div>
+                                            <div class="caption-close">
+                                                <span class="caption-close-ico">
+                                                    <a href="#" data-toggle="tooltip" title="Удалить">
+                                                        <i class="fas fa-times fa-lg black"></i>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div><!-- end Аудио -->
+                                    <!-- Стриминг -->
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="parser-container">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Стриминг</label>
+                                                <input class="form-control parser-input" placeholder="" type="text" value=""
+                                                    data-parser="/ajax/parser.php" name="striming">
+                                            </div>
+                                            <div class="caption-inner parser-inner">
+                                            <div class="video-player">
+                                                <img src="img/video9.jpg" alt="photo" class="m0">
+                                                <a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video"
+                                                   id="oi">
+                                                    <i class="play-icon fas fa-play fa-2x"></i>
+                                                </a>
+                                                <div class="video-content">
+                                                    <div class="h4 title">Rock Garden Festival - Day 3</div>
+                                                    <time class="published" datetime="2017-03-24T18:18">12:06</time>
+                                                </div>
+                                            </div>
+                                            <div class="caption-close">
+                                                <span class="caption-close-ico">
+                                                    <a href="#" data-toggle="tooltip" title="Удалить">
+                                                        <i class="fas fa-times fa-lg black"></i>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div><!-- end Стриминг -->
+                                    <!-- Ссылка -->
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="parser-container">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Ссылка</label>
+                                                <input class="form-control parser-input" placeholder="" type="text" value=""
+                                                    data-parser="/ajax/parser.php" name="link">
+                                            </div>
+                                            <div class="caption-inner parser-inner">
+                                            <div class="post-video">
+                                                <div class="video-thumb">
+                                                    <img src="img/video-youtube2.jpg" alt="photo" class="m0">
+                                                    <a href="https://youtube.com/watch?v=excVFQ2TWig"></a>
+                                                </div>
+                                                <div class="video-content">
+                                                    <a href="#" class="h4 title">Iron Maid - ChillGroves</a>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur ipisicing elit, sed do
+                                                        eiusmod tempor incididunt
+                                                        ut labore et dolore magna aliqua...
+                                                    </p>
+                                                    <a href="#" class="link-site">YOUTUBE.COM</a>
+                                                </div>
+                                            </div>
+                                            <div class="caption-close">
+                                                <span class="caption-close-ico">
+                                                    <a href="#" data-toggle="tooltip" title="Удалить">
+                                                        <i class="fas fa-times fa-lg black"></i>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div><!-- end Ссылка -->
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Аттач</label>
+                                            <input class="form-control" placeholder="" type="text" value=""
+                                                   data-toggle="modal" data-target="#update-header-photo">
+                                            <span class="input-group-addon">
+                                                <a href="#" class="options-message foto" data-toggle="modal" data-target="#update-header-photo">
+                                                    <i class="speech-balloon-icon fas fa-paperclip"></i>
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <div class="caption-inner">
+                                            <div class="post-additional-tags inline-items">
+                                                <a href="#" class="post-add-icon inline-items">
+                                                    <i class="speech-balloon-icon fas fa-paperclip"></i>
+                                                </a>
+                                                <div class="names-people-likes">
+                                                    <span><a href="#"
+                                                             class="attach-post">photos_from_concert.zip</a></span>
+                                                    <span><a class="gray">77.7 МБ</a></span>
+                                                </div>
+                                                <span class="caption-close-ico-attach">
+                                                    <a href="#" data-toggle="tooltip" title="Удалить">
+                                                        <i class="fas fa-times fa-lg black"></i>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 center">
+                                        <button class="btn-fanzo btn-lg abtn">Опубликовать пост!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 button-box center">
+                                <a class="btn-fanzo btn-lg abtn" data-toggle="shadow">Создать пост!</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="ui-block">
+                    <div class="ui-block-content">
+                        <div class="w-select">
+                            <div class="title">Фильтр по подписке:</div>
+                            <fieldset class="fieldsetblog">
+                                <select class="selectblog">
+                                    <option value="DA" selected>Все</option>
+                                    <option value="1">Подписка 1</option>
+                                    <option value="2">Подписка 2</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-block">
+                    <article class="hentry post video">
+                        <div class="post__author author vcard inline-items">
+                            <a href="#"><img src="img/avatar7-sm.jpg" alt="author"></a>
+                            <div class="author-date">
+                                <a class="h6 post__author-name fn" href="#">БИ-2</a>
+                                <div class="post__date">
+                                    <time class="published" datetime="2004-07-24T18:18">
+                                        братья-акробатья
+                                    </time>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Заголовок поста</h3>
+                        <a href="#" class="available">24 дек в 15:11</a>
+                        <div class="author-available">
+                            <span class="available" data-toggle="tooltip" data-placement="top"
+                                  data-original-title="Для подписчиков с подпиской NNN+">
+                                <i class="fas fa-lock-open fa-sm"></i>
+                                Доступно
+                            </span>
+                        </div>
+                        <p>Hey <a href="#">Cindi</a>, you should really check out this new song by Iron Maid. The next
+                            time they come to the city we should totally go!</p>
+                        <div class="post-video">
+                            <div class="video-thumb">
+                                <img src="img/video-youtube1.jpg" alt="photo">
+                                <a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video">
+                                    <i class="play-icon fas fa-play fa-2x"></i>
+                                </a>
+                            </div>
+                            <div class="video-content">
+                                <a href="#" class="h4 title">Iron Maid - ChillGroves</a>
+                                <p>Lorem ipsum dolor sit amet, consectetur ipisicing elit, sed do eiusmod tempor
+                                    incididunt
+                                    ut labore et dolore magna aliqua...
+                                </p>
+                                <a href="#" class="link-site">YOUTUBE.COM</a>
+                            </div>
+                        </div>
+                        <div class="post-additional-tags inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-tags"></i>
+                            </a>
+                            <div class="names-people-likes">
+                                <a href="#">кино</a>, <a href="#">книга</a>, <a href="#">концерт</a>
+                            </div>
+                            <div class="comments-shared"></div>
+                        </div>
+                        <div class="post-additional-info inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-heart far"></i>
+                                <span>18</span>
+                            </a>
+                            <div class="comments-shared">
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-donate"></i>
+                                </a>
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-comment far"></i>
+                                    <span>0</span>
+                                </a>
+                                <a href="#collapseE1" class="post-add-icon inline-items mr0" data-toggle="collapse"
+                                   aria-expanded="false" aria-controls="collapseE1">
+                                    <i class="speech-balloon-icon mr0 fas fa-share-alt"></i>
+                                </a>
+                                <div class="collapse" id="collapseE1">
+                                    <div class="ya-share2"
+                                         data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,delicious,digg,reddit,evernote,linkedin,lj,pocket,qzone,renren,sinaWeibo,surfingbird,tencentWeibo,tumblr,viber,whatsapp,skype,telegram"
+                                         data-limit="3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="ui-block">
+                    <article class="hentry post video">
+                        <div class="post__author author vcard inline-items">
+                            <a href="#"><img src="img/avatar7-sm.jpg" alt="author"></a>
+                            <div class="author-date">
+                                <a class="h6 post__author-name fn" href="#">БИ-2</a>
+                                <div class="post__date">
+                                    <time class="published" datetime="2004-07-24T18:18">
+                                        братья-акробатья
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="more">
+                                <i class="gray fas fa-ellipsis-h"></i>
+                                <ul class="more-dropdown">
+                                    <li>
+                                        <a href="#">Редактировать пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Удалить пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Активировать подписку</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Отправить донат</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Пожаловаться на пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Скрыть пост (для модератора)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Заголовок поста</h3>
+                        <a href="#" class="available">24 дек в 15:11</a>
+                        <div class="author-available">
+                            <span class="available" data-toggle="tooltip" data-placement="top"
+                                  data-original-title="Для подписчиков с подпиской NNN+">
+                                <i class="fas fa-lock-open fa-sm"></i>
+                                Доступно
+                            </span>
+                        </div>
+                        <p>Hey <a href="#">Cindi</a>, you should really check out this new song by Iron Maid. The next
+                            time they come to the city we should totally go!</p>
+                        <div class="post-video">
+                            <div class="video-thumb">
+                                <img src="img/video-youtube1.jpg" alt="photo">
+                                <a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video">
+                                    <i class="play-icon fas fa-play fa-2x"></i>
+                                </a>
+                            </div>
+                            <div class="video-content">
+                                <a href="#" class="h4 title">Iron Maid - ChillGroves</a>
+                                <p>Lorem ipsum dolor sit amet, consectetur ipisicing elit, sed do eiusmod tempor
+                                    incididunt
+                                    ut labore et dolore magna aliqua...
+                                </p>
+                                <a href="#" class="link-site">YOUTUBE.COM</a>
+                            </div>
+                        </div>
+                        <div class="post-additional-tags inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-tags"></i>
+                            </a>
+                            <div class="names-people-likes">
+                                <a href="#">кино</a>, <a href="#">книга</a>, <a href="#">концерт</a>
+                            </div>
+                            <div class="comments-shared"></div>
+                        </div>
+                        <div class="post-additional-info inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-heart far"></i>
+                                <span>18</span>
+                            </a>
+                            <!-- <ul class="friends-harmonic">
+                                <li>
+                                    <a href="#">
+                                        <img src="img/friend-harmonic9.jpg" alt="friend">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/friend-harmonic10.jpg" alt="friend">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/friend-harmonic7.jpg" alt="friend">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/friend-harmonic8.jpg" alt="friend">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/friend-harmonic6.jpg" alt="friend">
+                                    </a>
+                                </li>
+                            </ul> -->
+                            <div class="comments-shared">
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-donate"></i>
+                                </a>
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-comment far"></i>
+                                    <span>0</span>
+                                </a>
+                                <a href="#collapseE1" class="post-add-icon inline-items mr0" data-toggle="collapse"
+                                   aria-expanded="false" aria-controls="collapseE1">
+                                    <i class="speech-balloon-icon mr0 fas fa-share-alt"></i>
+                                </a>
+                                <div class="collapse" id="collapseE1">
+                                    <div class="ya-share2"
+                                         data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,delicious,digg,reddit,evernote,linkedin,lj,pocket,qzone,renren,sinaWeibo,surfingbird,tencentWeibo,tumblr,viber,whatsapp,skype,telegram"
+                                         data-limit="3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="ui-block">
+                    <article class="hentry post video">
+                        <div class="post__author author vcard inline-items">
+                            <a href="#"><img src="img/avatar7-sm.jpg" alt="author"></a>
+                            <div class="author-date">
+                                <a class="h6 post__author-name fn" href="#">БИ-2</a>
+                                <div class="post__date">
+                                    <time class="published" datetime="2004-07-24T18:18">
+                                        братья-акробатья
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="more">
+                                <i class="gray fas fa-ellipsis-h"></i>
+                                <ul class="more-dropdown">
+                                    <li>
+                                        <a href="#">Редактировать пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Удалить пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Активировать подписку</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Отправить донат</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Пожаловаться на пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Скрыть пост (для модератора)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Пост, в котором есть все элементы (картинка, видео, ссылка, аттачи)</h3>
+                        <a href="#" class="available">24 дек в 15:11</a>
+                        <div class="author-available">
+                            <span class="available" data-toggle="tooltip" data-placement="top"
+                                  data-original-title="Для подписчиков с подпиской NNN+">
+                                <i class="fas fa-lock-open fa-sm"></i>
+                                Доступно
+                            </span>
+                        </div>
+                        <p>
+                            Hey <a href="#">Cindi</a>, you should really check out this new song by Iron Maid. The next
+                            time they come to the city we should totally go!
+                        </p>
+                        <p>
+                            Hey <a href="#">Cindi</a>, you should really check out this new song by Iron Maid. The next
+                            time they come to the city we should totally go!
+                        </p>
+                        <div class="post-thumb">
+                            <img src="img/post-photo8.jpg" alt="photo">
+                        </div>
+                        <div class="post-video">
+                            <div class="video-thumb">
+                                <img src="img/video-youtube2.jpg" alt="photo">
+                                <a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video">
+                                    <i class="play-icon fas fa-play fa-2x"></i>
+                                </a>
+                            </div>
+                            <div class="video-content">
+                                <a href="#" class="h4 title">Iron Maid - ChillGroves</a>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur ipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua...
+                                </p>
+                                <a href="#" class="link-site">YOUTUBE.COM</a>
+                            </div>
+                        </div>
+                        <div class="post-video">
+                            <div class="video-thumb">
+                                <a href="#"><img src="img/video-youtube2.jpg" alt="photo"></a>
+                            </div>
+                            <div class="video-content">
+                                <a href="#" class="h4 title">Iron Maid - ChillGroves</a>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur ipisicing elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua...
+                                </p>
+                                <a href="#" class="link-site">YOUTUBE.COM</a>
+                            </div>
+                        </div>
+                        <div class="post-additional-tags inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-paperclip"></i>
+                            </a>
+                            <div class="names-people-likes">
+                                <span>
+                                    <a href="#" class="attach-post">proshchai, berlin(rare edit).mp3</a>
+                                </span>
+                                <span>
+                                    <a class="gray">3.2 МБ</a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="post-additional-tags inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-paperclip"></i>
+                            </a>
+                            <div class="names-people-likes">
+                                <span><a href="#" class="attach-post">photos_from_concert.zip</a></span>
+                                <span><a class="gray">77.7 МБ</a></span>
+                            </div>
+                        </div>
+                        <div class="post-additional-tags inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-tags"></i>
+                            </a>
+                            <div class="names-people-likes">
+                                <a href="#">кино</a>, <a href="#">книга</a>, <a href="#">концерт</a>
+                            </div>
+                        </div>
+                        <div class="post-additional-info inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-heart far"></i>
+                                <span>19</span>
+                            </a>
+                            <div class="comments-shared">
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-donate"></i>
+                                </a>
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-comment far"></i>
+                                    <span>10</span>
+                                </a>
+                                <a href="#collapseE02" class="post-add-icon inline-items mr0" data-toggle="collapse" aria-expanded="false" aria-controls="collapseE02">
+                                    <i class="speech-balloon-icon mr0 fas fa-share-alt"></i>
+                                </a>
+                                <div class="collapse" id="collapseE02">
+                                    <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,delicious,digg,reddit,evernote,linkedin,lj,pocket,qzone,renren,sinaWeibo,surfingbird,tencentWeibo,tumblr,viber,whatsapp,skype,telegram" data-limit="3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="ui-block">
+                    <article class="hentry post video">
+                        <div class="post__author author vcard inline-items">
+                            <a href="#"><img src="img/avatar5-sm.jpg" alt="author"></a>
+                            <div class="author-date">
+                                <a class="h6 post__author-name fn" href="#">Green Goo Rock</a>
+                                <div class="post__date">
+                                    <time class="published" datetime="2004-07-24T18:18">
+                                        делаем рок эраунд зэ клок
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="more">
+                                <i class="gray fas fa-ellipsis-h"></i>
+                                <ul class="more-dropdown">
+                                    <li>
+                                        <a href="#">Редактировать пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Удалить пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Активировать подписку</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Отправить донат</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Пожаловаться на пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Скрыть пост (для модератора)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Пример закрытого поста</h3>
+                        <a href="#" class="available">24 дек в 15:11</a>
+                        <div class="author-available">
+                            <!-- <a class="author-available-icon inline-items">
+                                <a href="#" class="gray"><i class="fas fa-lock fa-sm"></i></a>
+                                <span class="available" data-toggle="tooltip" data-placement="top" data-original-title="Для подписчиков с подпиской NNN+">Недоступно</span>
+                            </a> -->
+                            <span class="available" data-toggle="tooltip" data-placement="top"
+                                  data-original-title="Для подписчиков с подпиской NNN+">
+                                <i class="fas fa-lock fa-sm"></i>
+                                Недоступно
+                            </span>
+                        </div>
+                        <p>Hey guys! We are gona be playing this Saturday of <a href="#">The Marina Bar</a> for their
+                            new Mystic Deer Party.
+                            If you wanna hang out and have a really good time, come and join us. We’l be waiting for
+                            you!
+                        </p>
+                        <div class="post-thumb-copy-2">
+                            <div class="post-lock-copy-2">
+                                <a href="#" class="purple"><i class="fas fa-lock fa-5x"></i></a>
+                                <p>Откройте эту запись, став платным подписчиком</p>
+                                <a href="#" class="btn-fanzo btn-lg abtn">Присоединятесь за 100Р в месяц</a>
+                            </div>
+                        </div>
+                        <div class="post-additional-tags inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-tags"></i>
+                            </a>
+                            <div class="names-people-likes">
+                                <a href="#">кино</a>, <a href="#">книга</a>, <a href="#">концерт</a>
+                            </div>
+                            <div class="comments-shared"></div>
+                        </div>
+                        <div class="post-additional-info inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-heart far"></i>
+                                <span>43</span>
+                            </a>
+                            <div class="comments-shared">
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-donate"></i>
+                                </a>
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-comment far"></i>
+                                    <span>261</span>
+                                </a>
+                                <a href="#collapseE2-1" class="post-add-icon inline-items mr0" data-toggle="collapse"
+                                   aria-expanded="false" aria-controls="collapseE2-1">
+                                    <i class="speech-balloon-icon mr0 fas fa-share-alt"></i>
+                                </a>
+                                <div class="collapse" id="collapseE2-1">
+                                    <div class="ya-share2"
+                                         data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,delicious,digg,reddit,evernote,linkedin,lj,pocket,qzone,renren,sinaWeibo,surfingbird,tencentWeibo,tumblr,viber,whatsapp,skype,telegram"
+                                         data-limit="3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="ui-block">
+                    <article class="hentry post">
+                        <div class="post__author author vcard inline-items">
+                            <a href="#"><img src="img/avatar10-sm.jpg" alt="author"></a>
+                            <div class="author-date">
+                                <a class="h6 post__author-name fn" href="#">Elaine Dreyfuss</a>
+                                <div class="post__date">
+                                    <time class="published" datetime="2004-07-24T18:18">
+                                        капкейки, капкейки, кругом одни капкейки
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="more">
+                                <i class="gray fas fa-ellipsis-h"></i>
+                                <ul class="more-dropdown">
+                                    <li>
+                                        <a href="#">Редактировать пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Удалить пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Активировать подписку</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Отправить донат</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Пожаловаться на пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Скрыть пост (для модератора)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Заголовок поста</h3>
+                        <a href="#" class="available">24 дек в 15:11</a>
+                        <div class="author-available">
+                            <span class="available" data-toggle="tooltip" data-placement="top"
+                                  data-original-title="Для подписчиков с подпиской NNN+">
+                                <i class="fas fa-lock-open fa-sm"></i>
+                                Доступно
+                            </span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris consequat.
+                        </p>
+                        <div class="post-additional-tags inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-tags"></i>
+                            </a>
+                            <div class="names-people-likes">
+                                <a href="#">кино</a>, <a href="#">книга</a>, <a href="#">концерт</a>
+                            </div>
+                            <div class="comments-shared"></div>
+                        </div>
+                        <div class="post-additional-info inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-heart far"></i>
+                                <span>24</span>
+                            </a>
+                            <div class="comments-shared">
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-donate"></i>
+                                </a>
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-comment far"></i>
+                                    <span>17</span>
+                                </a>
+                                <a href="#collapseE3" class="post-add-icon mr0 inline-items" data-toggle="collapse"
+                                   aria-expanded="false" aria-controls="collapseE3">
+                                    <i class="speech-balloon-icon mr0 fas fa-share-alt"></i>
+                                </a>
+                                <div class="collapse" id="collapseE3">
+                                    <div class="ya-share2"
+                                         data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,delicious,digg,reddit,evernote,linkedin,lj,pocket,qzone,renren,sinaWeibo,surfingbird,tencentWeibo,tumblr,viber,whatsapp,skype,telegram"
+                                         data-limit="3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Comments -->
+                    <ul class="comments-list">
+                        <li class="comment-item">
+                            <div class="post__author author vcard inline-items">
+                                <a href="#"><img src="img/author-page.jpg" alt="author"></a>
+                                <div class="author-date">
+                                    <a class="h6 post__author-name fn" href="02-ProfilePage.html">James Spiegel</a>
+                                    <div class="post__date">
+                                        <time class="published" datetime="2004-07-24T18:18">
+                                            38 mins ago
+                                        </time>
+                                    </div>
+                                </div>
+                                <a href="#" class="more">
+                                    <i class="gray fas fa-ellipsis-h"></i>
+                                </a>
+                            </div>
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium der
+                                doloremque
+                                laudantium.
+                            </p>
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-heart far"></i>
+                                <span>3</span>
+                            </a>
+                            <a href="#" class="reply">Reply</a>
+                        </li>
+                        <li class="comment-item">
+                            <div class="post__author author vcard inline-items">
+                                <a href="#"><img src="img/avatar1-sm.jpg" alt="author"></a>
+                                <div class="author-date">
+                                    <a class="h6 post__author-name fn" href="#">Mathilda Brinker</a>
+                                    <div class="post__date">
+                                        <time class="published" datetime="2004-07-24T18:18">
+                                            1 hour ago
+                                        </time>
+                                    </div>
+                                </div>
+                                <a href="#" class="more">
+                                    <i class="gray fas fa-ellipsis-h"></i>
+                                </a>
+                            </div>
+                            <p>Ratione voluptatem sequi en lod nesciunt. Neque porro quisquam est, quinder dolorem ipsum
+                                quia dolor sit amet, consectetur adipisci velit en lorem ipsum duis aute irure dolor in
+                                reprehenderit in voluptate velit esse cillum.
+                            </p>
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-heart far"></i>
+                                <span>8</span>
+                            </a>
+                            <a href="#" class="reply">Reply</a>
+                        </li>
+                    </ul>
+                    <!-- ... end Comments -->
+                    <a href="#" class="more-comments">View more comments <span>+</span></a>
+                    <!-- Comment Form  -->
+                    <form class="comment-form inline-items">
+                        <div class="post__author author vcard inline-items">
+                            <a href="#"><img src="img/author-page.jpg" alt="author"></a>
+                            <div class="form-group with-icon-right ">
+                                <textarea class="form-control" placeholder=""></textarea>
+                                <div class="add-options-message">
+                                    <a href="#" class="options-message" data-toggle="modal"
+                                       data-target="#update-header-photo">
+                                        <i class="fas fa-camera"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-md-2 btn-primary yellow">Post Comment</button>
+                        <button class="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color">Cancel
+                        </button>
+                    </form>
+                    <!-- ... end Comment Form  -->
+                </div>
+                <div class="ui-block">
+                    <article class="hentry post has-post-thumbnail">
+                        <div class="post__author author vcard inline-items">
+                            <a href="#"><img src="img/avatar5-sm.jpg" alt="author"></a>
+                            <div class="author-date">
+                                <a class="h6 post__author-name fn" href="#">Green Goo Rock</a>
+                                <div class="post__date">
+                                    <time class="published" datetime="2004-07-24T18:18">
+                                        делаем рок эраунд зэ клок
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="more">
+                                <i class="gray fas fa-ellipsis-h"></i>
+                                <ul class="more-dropdown">
+                                    <li>
+                                        <a href="#">Редактировать пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Удалить пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Активировать подписку</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Отправить донат</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Пожаловаться на пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Скрыть пост (для модератора)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Заголовок поста</h3>
+                        <a href="#" class="available">24 дек в 15:11</a>
+                        <div class="author-available">
+                            <span class="available" data-toggle="tooltip" data-placement="top"
+                                  data-original-title="Для подписчиков с подпиской NNN+">
+                                <i class="fas fa-lock-open fa-sm"></i>
+                                Доступно
+                            </span>
+                        </div>
+                        <p>Hey guys! We are gona be playing this Saturday of <a href="#">The Marina Bar</a> for their
+                            new Mystic Deer Party.
+                            If you wanna hang out and have a really good time, come and join us. We’l be waiting for
+                            you!
+                        </p>
+                        <div class="post-thumb">
+                            <img src="img/post__thumb1.jpg" alt="photo">
+                        </div>
+                        <div class="post-additional-tags inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-tags"></i>
+                            </a>
+                            <div class="names-people-likes">
+                                <a href="#">кино</a>, <a href="#">книга</a>, <a href="#">концерт</a>
+                            </div>
+                            <div class="comments-shared"></div>
+                        </div>
+                        <div class="post-additional-info inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-heart far"></i>
+                                <span>49</span>
+                            </a>
+                            <div class="comments-shared">
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-donate"></i>
+                                </a>
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-comment far"></i>
+                                    <span>264</span>
+                                </a>
+                                <a href="#collapseE4" class="post-add-icon inline-items mr0" data-toggle="collapse"
+                                   aria-expanded="false" aria-controls="collapseE4">
+                                    <i class="speech-balloon-icon mr0 fas fa-share-alt"></i>
+                                </a>
+                                <div class="collapse" id="collapseE4">
+                                    <div class="ya-share2"
+                                         data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,delicious,digg,reddit,evernote,linkedin,lj,pocket,qzone,renren,sinaWeibo,surfingbird,tencentWeibo,tumblr,viber,whatsapp,skype,telegram"
+                                         data-limit="3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="ui-block">
+                    <article class="hentry post has-post-thumbnail">
+                        <div class="post__author author vcard inline-items">
+                            <a href="#"><img src="img/avatar3-sm.jpg" alt="author"></a>
+                            <div class="author-date">
+                                <a class="h6 post__author-name fn" href="#">Sarah Hetfield</a>
+                                <div class="post__date">
+                                    <time class="published" datetime="2004-07-24T18:18">
+                                        Lorem ipsum
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="more">
+                                <i class="gray fas fa-ellipsis-h"></i>
+                                <ul class="more-dropdown">
+                                    <li>
+                                        <a href="#">Редактировать пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Удалить пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Активировать подписку</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Отправить донат</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Пожаловаться на пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Скрыть пост (для модератора)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Заголовок поста</h3>
+                        <a href="#" class="available">24 дек в 15:11</a>
+                        <div class="author-available">
+                            <span class="available" data-toggle="tooltip" data-placement="top"
+                                  data-original-title="Для подписчиков с подпиской NNN+">
+                                <i class="fas fa-lock-open fa-sm"></i>
+                                Доступно
+                            </span>
+                        </div>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                            accusantium doloremque.
+                        </p>
+                        <div class="post-additional-tags inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-tags"></i>
+                            </a>
+                            <div class="names-people-likes">
+                                <a href="#">кино</a>, <a href="#">книга</a>, <a href="#">концерт</a>
+                            </div>
+                            <div class="comments-shared"></div>
+                        </div>
+                        <div class="post-additional-info inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-heart far"></i>
+                                <span>0 Likes</span>
+                            </a>
+                            <div class="comments-shared">
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-donate"></i>
+                                </a>
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-comment far"></i>
+                                    <span>0 Comments</span>
+                                </a>
+                                <a href="#collapseE5" class="post-add-icon inline-items mr0" data-toggle="collapse"
+                                   aria-expanded="false" aria-controls="collapseE5">
+                                    <i class="speech-balloon-icon mr0 fas fa-share-alt"></i>
+                                </a>
+                                <div class="collapse" id="collapseE5">
+                                    <div class="ya-share2"
+                                         data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,delicious,digg,reddit,evernote,linkedin,lj,pocket,qzone,renren,sinaWeibo,surfingbird,tencentWeibo,tumblr,viber,whatsapp,skype,telegram"
+                                         data-limit="3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="ui-block">
+                    <article class="hentry post has-post-thumbnail">
+                        <div class="post__author author vcard inline-items">
+                            <a href="#"><img src="img/avatar2-sm.jpg" alt="author"></a>
+                            <div class="author-date">
+                                <a class="h6 post__author-name fn" href="#">Nicholas Grissom</a>
+                                <div class="post__date">
+                                    <time class="published" datetime="2004-07-24T18:18">
+                                        Lorem ipsum
+                                    </time>
+                                </div>
+                            </div>
+                            <div class="more">
+                                <i class="gray fas fa-ellipsis-h"></i>
+                                <ul class="more-dropdown">
+                                    <li>
+                                        <a href="#">Редактировать пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Удалить пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Активировать подписку</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Отправить донат</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Пожаловаться на пост</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Скрыть пост (для модератора)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Заголовок поста</h3>
+                        <a href="#" class="available">24 дек в 15:11</a>
+                        <div class="author-available">
+                            <span class="available" data-toggle="tooltip" data-placement="top"
+                                  data-original-title="Для подписчиков с подпиской NNN+">
+                                <i class="fas fa-lock-open fa-sm"></i>
+                                Доступно
+                            </span>
+                        </div>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                            accusantium doloremque.
+                        </p>
+                        <div class="post-additional-tags inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-tags"></i>
+                            </a>
+                            <div class="names-people-likes">
+                                <a href="#">кино</a>, <a href="#">книга</a>, <a href="#">концерт</a>
+                            </div>
+                            <div class="comments-shared"></div>
+                        </div>
+                        <div class="post-additional-info inline-items">
+                            <a href="#" class="post-add-icon inline-items">
+                                <i class="speech-balloon-icon fas fa-heart far"></i>
+                                <span>22</span>
+                            </a>
+                            <div class="comments-shared">
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-donate"></i>
+                                </a>
+                                <a href="#" class="post-add-icon inline-items">
+                                    <i class="speech-balloon-icon fas fa-comment far"></i>
+                                    <span>0</span>
+                                </a>
+                                <a href="#collapseE6" class="post-add-icon inline-items mr0" data-toggle="collapse"
+                                   aria-expanded="false" aria-controls="collapseE6">
+                                    <i class="speech-balloon-icon mr0 fas fa-share-alt"></i>
+                                </a>
+                                <div class="collapse" id="collapseE6">
+                                    <div class="ya-share2"
+                                         data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,delicious,digg,reddit,evernote,linkedin,lj,pocket,qzone,renren,sinaWeibo,surfingbird,tencentWeibo,tumblr,viber,whatsapp,skype,telegram"
+                                         data-limit="3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <a id="load-more-button" href="#" class="btn btn-control btn-more color-red"
+               data-load-link="items-to-load.html" data-container="newsfeed-items-grid">
+                <i class="fas fa-ellipsis-h"></i>
+            </a>
+        </main>
+        <!-- ... end Main Content -->
+        <!-- Left Sidebar -->
+        <aside class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12">
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title">О Проекте</h6>
+                    <div class="more">
+                        <i class="gray fas fa-ellipsis-h"></i>
+                        <ul class="more-dropdown">
+                            <li>
+                                <a href="#">Пожаловаться</a>
+                            </li>
+                            <li>
+                                <a href="#">Редактировать проект</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ui-block-content">
+                    <!-- W-Personal-Info -->
+                    <ul class="widget w-personal-info item-block">
+                        <li>
+                            <h3>12,233</h3>
+                            <span class="text">подписчиков</span>
+                        </li>
+                        <li>
+                            <h3>2400 RUB</h3>
+                            <span class="text">общая сумма дохода в месяц</span>
+                        </li>
+                        <li>
+                            <span class="title">Категория:</span>
+                            <span class="text">Музыка</span>
+                        </li>
+                        <li>
+                            <span class="title">Теги:</span>
+                            <span class="text">
+                                <div class="names-people-likes">
+                                    <a href="#">кино</a>, <a href="#">книга</a>, <a href="#">концерт</a>
+                                </div>
+                            </span>
+                        </li>
+                    </ul>
+                    <!-- ... end W-Personal-Info -->
+                    <!-- W-Socials -->
+                    <div class="widget w-socials share-block">
+                        <h6 class="title">Поделиться:</h6>
+                        <div class="ya-share2"
+                             data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,delicious,digg,reddit,evernote,linkedin,lj,pocket,qzone,renren,sinaWeibo,surfingbird,tencentWeibo,tumblr,viber,whatsapp,skype,telegram"
+                             data-limit="3"></div>
+                    </div>
+                    <div class="widget w-socials">
+                        <h6 class="title">Проект в социальных сетях:</h6>
+                        <a href="#" class="social-item bg-facebook" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-item bg-vkontakte" title="VKontakte">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="#" class="social-item bg-youtube" title="Youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-item bg-pinterest" title="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="#" class="social-item bg-tumblr" title="Thumblr">
+                            <i class="fab fa-tumblr-square"></i>
+                        </a>
+                    </div>
+                    <!-- ... end W-Socials -->
+                </div>
+            </div>
+        </aside>
+        <!-- ... end Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12" id="subscriptions">
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title tc">Подписки</h6>
+                </div>
+                <!-- W-Friend-Pages-Added -->
+                <ul class="widget w-friend-pages-added notification-list friend-requests">
+                    <li class="inline-fanzo">
+                        <div>
+                            <a href="#" class="h6 notification-friend">Бесплатная подписка</a>
+                            <span class="chat-message-item">Читайте посты этого проекта в своей ленте</span>
+                            <span class="notification-date"><b>бесплатно</b></span>
+                        </div>
+                        <div class="notification-fanzo p25">
+                            <a href="01-LandingPage.html" class="btn-fanzo">Подписаться</a>
+                        </div>
+                    </li>
+                    <li class="inline-fanzo">
+                        <div>
+                            <a href="#" class="h6 notification-friend">Подписка 1</a>
+                            <span class="chat-message-item">Получите доступ к закрытым постам</span>
+                            <span class="notification-date"><b>10 рублей в месяц</b></span>
+                        </div>
+                        <div class="notification-fanzo p25">
+                            <a href="01-LandingPage.html" class="btn-fanzo">Подписаться за 10 рублей</a>
+                        </div>
+                    </li>
+                    <li class="inline-fanzo">
+                        <div>
+                            <a href="#" class="h6 notification-friend">Подписка 2</a>
+                            <span class="chat-message-item">Получите доступ к закрытым постам + плюшкам</span>
+                            <span class="notification-date"><b>50 рублей в месяц</b></span>
+                        </div>
+                        <div class="notification-fanzo p25">
+                            <a href="01-LandingPage.html" class="btn-fanzo">Подписаться за 50 рублей</a>
+                        </div>
+                    </li>
+                    <li class="inline-fanzo bg-fan-grey">
+                        <div>
+                            <a href="#" class="h6 notification-friend">Подписка 3</a>
+                            <span class="chat-message-item">Получите доступ к закрытым постам + печенькам и кофе</span>
+                            <span class="notification-date"><b>100 рублей в месяц</b></span>
+                        </div>
+                        <div class="notification-fanzo p25">
+                            <a href="01-LandingPage.html" class="btn-fanzo-grey">Отменить подписку</a>
+                        </div>
+                    </li>
+                    <li class="inline-fanzo">
+                        <div>
+                            <a href="#" class="h6 notification-friend">Pay What You Like</a>
+                            <span class="chat-message-item">Поддержите проект на любую сумму, не получая преференций </span>
+                            <span class="notification-date"><b>от 1 рубля</b></span>
+                        </div>
+                        <div class="notification-fanzo p25">
+                            <a href="01-LandingPage.html" class="btn-fanzo">Поддержать проект</a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- .. end W-Friend-Pages-Added -->
+            </div>
+        </aside>
+        <!-- ... end Right Sidebar -->
+    </div>
+</div>
+<!-- Window-popup Update Header Photo -->
+<div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo"
+     aria-hidden="true">
+    <div class="modal-dialog window-popup update-header-photo" role="document">
+        <div class="modal-content">
+            <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+                <i class="fas fa-times fa-2x"></i>
+            </a>
+            <div class="modal-header">
+                <h6 class="title">Update Header Photo</h6>
+            </div>
+            <div class="modal-body">
+                <a href="#" class="upload-photo-item">
+                    <h6>Upload Photo</h6>
+                    <span>Browse your computer.</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ... end Window-popup Update Header Photo -->
+<!-- Window-popup Choose from my Photo -->
+<div class="modal fade" id="choose-from-my-photo" tabindex="-1" role="dialog" aria-labelledby="choose-from-my-photo"
+     aria-hidden="true">
+    <div class="modal-dialog window-popup choose-from-my-photo" role="document">
+        <div class="modal-content">
+            <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+                <i class="fas fa-times fa-2x"></i>
+            </a>
+            <div class="modal-header">
+                <h6 class="title">Choose from My Photos</h6>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-expanded="true">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-expanded="false">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home" role="tabpanel" aria-expanded="true">
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo1.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo2.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo3.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo4.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo5.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo6.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo7.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo8.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <div class="radio">
+                                <label class="custom-radio">
+                                    <img src="img/choose-photo9.jpg" alt="photo">
+                                    <input type="radio" name="optionsRadios">
+                                </label>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
+                        <a href="#" class="btn btn-primary btn-lg btn--half-width">Confirm Photo</a>
+                    </div>
+                    <div class="tab-pane" id="profile" role="tabpanel" aria-expanded="false">
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo10.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">South America Vacations</a>
+                                    <span>Last Added: 2 hours ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo11.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">Photoshoot Summer 2016</a>
+                                    <span>Last Added: 5 weeks ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo12.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">Amazing Street Food</a>
+                                    <span>Last Added: 6 mins ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo13.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">Graffity & Street Art</a>
+                                    <span>Last Added: 16 hours ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo14.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">Amazing Landscapes</a>
+                                    <span>Last Added: 13 mins ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="choose-photo-item" data-mh="choose-item">
+                            <figure>
+                                <img src="img/choose-photo15.jpg" alt="photo">
+                                <figcaption>
+                                    <a href="#">The Majestic Canyon</a>
+                                    <span>Last Added: 57 mins ago</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
+                        <a href="#" class="btn btn-primary btn-lg disabled btn--half-width">Confirm Photo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ... end Window-popup Choose from my Photo -->
+<a class="back-to-top" href="">
+    <i class="back-icon fas fa-long-arrow-alt-up"></i>
+</a>
+<!-- autor-menu -->
+<div id="autor-menu">
+    <div class="col-xs-12 col-md-8 col-lg-9 autor-menu-row">
+        <div class="autor-menu-row">
+            <div class="author-menu-thumb">
+                <img src="img/author-main2.jpg" alt="author">
+            </div>
+            <div class="autor-menu-content">
+                <a href="#">Green Goo Rock</a>
+                <span>Здесь размещается тизер проекта</span>
+                <ul>
+                    <li>
+                        <a href="13-FavouritePage-About.html">О Проекте</a>
+                    </li>
+                    <li>
+                        <a href="12-FavouritePage.html" class="active">Посты</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="autor-menu-ul" id="subscriptions-link">
+                <a class="btn-fanzo-yellow scroll-btn">Подписаться</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ./autor-menu -->
+<!-- Jquery Scripts -->
+<script src="js/jquery-3.2.1.js"></script>
+<!-- Check flags -->
+<script src="js/material.min.js"></script>
+<!-- Bootstrap Scripts -->
+<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script><!-- search drop menu -->
+<script src="js/bootstrap-select.js"></script><!-- modified -->
+<script src="js/bootstrap-select_1.13.5.js"></script><!-- modified -->
+<!-- Calendar -->
+<script src="js/moment.js"></script>
+<script src="js/daterangepicker.js"></script>
+<!-- Video popup -->
+<script src="js/jquery.magnific-popup.js"></script>
+<!-- Search drop menu -->
+<script src="js/selectize.js"></script>
+<!-- Search drop menu-content .js-user-search -->
+<script src="js/base-init.js"></script>
+<!-- Fontawesome JS Scripts -->
+<script defer src="fontawesome/js/all.js"></script>
+<!-- MyltiSelect2 JS Scripts -->
+<script defer src="js/select2_4.0.6-rc.0.js"></script>
+<!-- Yandex share Scripts -->
+<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="//yastatic.net/share2/share.js"></script>
+<!-- Search Scripts -->
+<script type="text/javascript" src="js/search-query.min.js"></script>
+<script type="text/javascript" src="js/search-slide.min.js"></script>
+<!-- IE remove tooltips -->
+<script src="js/ei-remove-tooltip.js"></script>
+<!-- Main Scripts -->
+<script src="js/main.js"></script>
+<!-- Facebook Scripts -->
+<div id="fb-root"></div>
+<script src="js/facebook.js"></script>
+</body>
+</html>
